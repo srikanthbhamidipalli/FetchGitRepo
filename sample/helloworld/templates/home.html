@@ -1,0 +1,18 @@
+
+{% block content %}
+<center>
+<h2>Goahead to get your Git-repositories</h2>
+
+<form method='get'>
+{% csrf_token %}
+<input type="text" name="username" placeholder="Enter your username"/>
+<button type="submit">Fetch my repos</button>
+</form>
+
+{% if user %}
+<p><b>{{ username }}</b> has the following repositories:</p>
+{{ user }}
+{% endif %}
+</center>
+{% endblock %}
+    
